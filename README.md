@@ -4,8 +4,8 @@ Transcription Tools is a w. This program is written in c++ and built with the [J
 
 ## Features
 
-### Screenshots
+## Screenshots
 
 ## Getting Started
 
-
+## Future Plans
