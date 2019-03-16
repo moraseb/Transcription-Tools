@@ -26,3 +26,5 @@ Transcription Tools is a desktop app that contains various tools for music trans
 - Virtual guitar or stringed instrument.
 - Ability to resize audio visuals and keyboard.
 - Custom colors for markers.
+- Ability to save files
+- Pitch shifting and time stretching
