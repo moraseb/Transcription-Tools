@@ -10,14 +10,21 @@ Transcription Tools is a desktop app that contains various tools for music trans
 - Audio waveform visualization
 - Time signature visualization
 
-## Screenshots
-![Inital screen](/Screenshots/Screenshot1.png) ![File loaded](/Screenshots/Screenshot2.png)
-![Looping section](/Screenshots/Screenshot3.png) ![4/4 Time Signature in 140 bpm](/Screenshots/Screenshot4.png)
-
 ## Getting Started
 
-1. Download and install [Juce and Projucer](https://shop.juce.com/get-juce/download)
-2. 
+1. Download or clone the repository
+2. Download and install [Juce and Projucer](https://shop.juce.com/get-juce/download)
+  a. (Optional) Download and install [Microsoft Visual Studio](https://visualstudio.microsoft.com/)
+3. Open Projucer
+4. Open "TranscriptionTools.jucer"
+5.  
+
+
+## Screenshots
+![Inital screen](/Screenshots/Screenshot1.png) 
+![File loaded](/Screenshots/Screenshot2.png)
+![Looping section](/Screenshots/Screenshot3.png) 
+![4/4 Time Signature in 140 bpm](/Screenshots/Screenshot4.png)
 
 ## Future Plans
 - Panning options in the side panel.
