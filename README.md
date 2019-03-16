@@ -14,7 +14,7 @@ Transcription Tools is a desktop app that contains various tools for music trans
 
 1. Download or clone the repository
 2. Download and install [Juce and Projucer](https://shop.juce.com/get-juce/download)
-  a. (Optional) Download and install [Microsoft Visual Studio](https://visualstudio.microsoft.com/)
+  - (Optional) Download and install [Microsoft Visual Studio](https://visualstudio.microsoft.com/)
 3. Open Projucer
 4. Open "TranscriptionTools.jucer"
 5.  
