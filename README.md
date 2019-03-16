@@ -3,14 +3,18 @@
 Transcription Tools is a desktop app that contains various tools for music transcription. Its main focus is to assist with the rhythmic part of music transcription. This program is written in c++ and built with the [JUCE](https://juce.com) framework.
 
 ## Features
-- Audio waveform visualization.
-- Audio timeline
+- Looping
 - Markers
-- 
+- Audio timeline
+- Audio waveform visualization
+- Time signature visualization
 
 ## Screenshots
 
 ## Getting Started
+
+1. Download and install [Juce and Projucer](https://shop.juce.com/get-juce/download)
+2. 
 
 ## Future Plans
 - Panning options in the side panel.
