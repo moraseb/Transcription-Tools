@@ -10,10 +10,8 @@ Transcription Tools is a desktop app that contains various tools for music trans
 - Time signature visualization
 
 ## Screenshots
-![Inital Screen](/Screenshots/Screenshot1.png)
-![]()
-![]()
-![]()
+![Inital screen](/Screenshots/Screenshot1.png) ![File loaded](/Screenshots/Screenshot2.png)
+![Looping section](/Screenshots/Screenshot3.png) ![4/4 Time Signature in 140 bpm](/Screenshots/Screenshot4.png)
 
 ## Getting Started
 
