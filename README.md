@@ -9,6 +9,7 @@ Transcription Tools is a desktop app that contains various tools for music trans
 - Virtual keyboard
 - Audio waveform visualization
 - Time signature visualization
+- Support for WAV, FLAC, MP3, AIFF, and Ogg
 
 ## Getting Started
 
