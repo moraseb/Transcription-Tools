@@ -1,6 +1,6 @@
 # Transcription-Tools
 
-Transcription Tools is a desktop app that contains various tools for music transcription. Its main focus is to assist with the rhythmic part of music transcription. This program is written in c++ and built with the [JUCE](https://juce.com) framework.
+Transcription Tools is a desktop app that contains various tools for music transcription. Its main focus is to assist with the rhythmic part of music transcription. This program is written in C++ and built with the [JUCE](https://juce.com) framework.
 
 ## Features
 - Looping
