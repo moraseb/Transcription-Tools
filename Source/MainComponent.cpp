@@ -154,16 +154,36 @@ void MainComponent::getNextAudioBlock (const AudioSourceChannelInfo& bufferToFil
     // Updating buffer
     transportSource.getNextAudioBlock(bufferToFill);
     
-    //===================================== AUDIO PROCESSING GOES HERE ==================================//
+    //================================ AUDIO PROCESSING GOES HERE ==================================//
     auto* leftInBuffer = bufferToFill.buffer->getReadPointer(0, bufferToFill.startSample);
     auto* leftOutBuffer = bufferToFill.buffer->getWritePointer(0, bufferToFill.startSample);
     auto* rightInBuffer = bufferToFill.buffer->getReadPointer(1, bufferToFill.startSample);
     auto* rightOutBuffer = bufferToFill.buffer->getWritePointer(1, bufferToFill.startSample);
     
+    // Balance
+    double pan = sidePanel.getBalance() / 100;
+    for(auto sample = 0; sample < bufferToFill.numSamples; sample++) {
+      
+      if(pan > 0) {
+        leftOutBuffer[sample] = leftInBuffer[sample] * (1.0 - pan);
+      }
+      else if (pan < 0) {
+        rightOutBuffer[sample] = rightInBuffer[sample] * (1.0 + pan);
+      }
+      
+    }
+    
     // Invert Phase
-    if (invertPhase) {
+    if(sidePanel.isInverted()) {
       for(auto sample = 0; sample < bufferToFill.numSamples; sample++) {
-        leftOutBuffer[sample] = leftInBuffer[sample] - rightInBuffer[sample];
+        leftOutBuffer[sample] = -leftInBuffer[sample];
+      }
+    }
+    
+    // Mono
+    if(sidePanel.isMono()) {
+      for(auto sample = 0; sample < bufferToFill.numSamples; sample++) {
+        leftOutBuffer[sample] = (leftInBuffer[sample] + rightInBuffer[sample]) / 2;
         rightOutBuffer[sample] = leftOutBuffer[sample];
       }
     }
@@ -337,27 +357,28 @@ void MainComponent::openButtonClicked() {
   {
     File file = chooser.getResult();
     
-    if (auto* reader = formatManager.createReaderFor (file))
+    if (auto* reader = formatManager.createReaderFor(file))
     {
       std::unique_ptr<AudioFormatReaderSource> newSource (new AudioFormatReaderSource (reader, true));
       transportSource.setSource (newSource.get(), 0, nullptr, reader->sampleRate);
+      thumbnailComp.setFile(file);
+      readerSource.reset(newSource.release());
       sampleRate = reader->sampleRate;
       closeButton.setEnabled(true);
       playButton.setEnabled (true);
       skipStartButton.setEnabled(true);
       skipEndButton.setEnabled(true);
-      thumbnailComp.setFile(file);
-      readerSource.reset (newSource.release());
-      audioComp.timelineComp.setLength(transportSource.getLengthInSeconds());
-      audioComp.rhythmComp.setTrackLength(transportSource.getLengthInSeconds());
       gainSlider.setEnabled(true);
       gainSlider.setPopupDisplayEnabled(true, true, nullptr, -1);
       gainSlider.setColour(Slider::thumbColourId, blue);
       zoomSlider.setEnabled(true);
       zoomSlider.setPopupDisplayEnabled(true, true, nullptr, -1);
       zoomSlider.setColour(Slider::thumbColourId, blue);
+      audioComp.timelineComp.setLength(transportSource.getLengthInSeconds());
+      audioComp.rhythmComp.setTrackLength(transportSource.getLengthInSeconds());
       audioComp.setStartPosition(0);
       audioComp.setEndPosition(transportSource.getLengthInSeconds());
+      sidePanel.setFileName(file.getFileName());
     }
   }
 }
