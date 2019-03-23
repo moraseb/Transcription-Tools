@@ -36,14 +36,12 @@ Transcription Tools is a desktop app that contains various tools for music trans
 ![4/4 Time Signature in 140 bpm](/Screenshots/Screenshot4.png)
 
 ## Future Plans
-- Panning options in the side panel.
-- Information about playback state and file in the side panel.
-- Tap bpm button and other rhythmic tools in the side panel.
-- Ability to drag and drop files.
-- Audio viewport follows playback.
-- Synthesizer for virtual piano.
-- Virtual guitar or stringed instrument.
-- Ability to resize audio visuals and keyboard.
-- Custom colors for markers.
+- Tap bpm button and other rhythmic tools in the side panel
+- Ability to drag and drop files
+- Audio viewport follows playback
+- Synthesizer for virtual piano
+- Virtual guitar or stringed instrument
+- Ability to resize audio visuals and keyboard
+- Custom colors for markers
 - Ability to save files
 - Pitch shifting and time stretching
